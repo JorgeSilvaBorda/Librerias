@@ -9,5 +9,4 @@ public class Comunes {
 		}
 		return str.toString();
 	}
-
 }
