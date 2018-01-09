@@ -5,7 +5,9 @@ package com.librerias.datos.excepcion;
  */
 public class ExcepcionPassword extends Exception {
 
-    public ExcepcionPassword() {
+	private static final long serialVersionUID = 8759883988598433949L;
+
+	public ExcepcionPassword() {
     }
 
     public ExcepcionPassword(String msg) {
