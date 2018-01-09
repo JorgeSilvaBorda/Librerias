@@ -26,7 +26,7 @@ public class MD5 {
 		MessageDigest md = MessageDigest.getInstance("MD5");
 		md.update(mensaje.getBytes());
 		byte[] digest = md.digest();
-		return new Comunes().base64ToString(digest);
+		return Comunes.base64ToString(digest);
 	}
 
 	public String cifrarBase64(String mensaje) throws NoSuchAlgorithmException {
