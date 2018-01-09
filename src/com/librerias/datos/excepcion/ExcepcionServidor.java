@@ -5,8 +5,6 @@ package com.librerias.datos.excepcion;
  */
 public class ExcepcionServidor extends Exception {
 
-	private static final long serialVersionUID = 1L;
-
 	public ExcepcionServidor() {
 	}
 

@@ -1,11 +1,9 @@
 package com.librerias.datos.excepcion;
 
-/**
- * @author Jorge Silva Borda
- */
 public class ExcepcionUsuario extends Exception {
-
-	private static final long serialVersionUID = 1L;
+	/**
+	 * @author Jorge Silva Borda
+	 */
 
 	public ExcepcionUsuario() {
 	}

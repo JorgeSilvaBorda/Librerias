@@ -13,12 +13,6 @@ public class ConexionOracle extends Conexion{
 		super(SERVIDOR, USUARIO, PASSWORD, BASEDATOS);
 		this.setSID(SID);
 	}
-	
-	public ConexionOracle(String SERVIDOR, String USUARIO, String PASSWORD, String BASEDATOS, String SID, int puerto) {
-		super(SERVIDOR, USUARIO, PASSWORD, BASEDATOS);
-		super.setPUERTO(puerto);
-		this.setSID(SID);
-	}
 
 	/**
 	 * @return the sID
