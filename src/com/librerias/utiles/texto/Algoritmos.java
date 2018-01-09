@@ -5,7 +5,7 @@ package com.librerias.utiles.texto;
  * @author Jorge Silva Borda
  *
  */
-public class ALgoritmos {
+public class Algoritmos {
 	
 	/**
 	 * Arroja el valor de acuerdo a la semejanza de las palabras que se están comparando.
