@@ -62,8 +62,7 @@ public class SHA {
 		MessageDigest md = MessageDigest.getInstance("SHA-256");
 		md.update(mensaje.getBytes());
 		byte[] digest = md.digest();
-		byte[] encoded = Base64.getEncoder().encode(digest);
-		return new String(encoded);
+		return Comunes.base64ToString(digest);
 	}
 
 	/**
@@ -89,7 +88,6 @@ public class SHA {
 		MessageDigest md = MessageDigest.getInstance("SHA-512");
 		md.update(mensaje.getBytes());
 		byte[] digest = md.digest();
-		byte[] encoded = Base64.getEncoder().encode(digest);
-		return new String(encoded);
+		return Comunes.base64ToString(digest);
 	}
 }
