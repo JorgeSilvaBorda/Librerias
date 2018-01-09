@@ -5,14 +5,16 @@ import com.librerias.datos.excepcion.ExcepcionServidor;
 import com.librerias.datos.excepcion.ExcepcionUsuario;
 
 public class Conexion {
+	@SuppressWarnings("unused")
 	private final String SERVIDOR, USUARIO, PASSWORD, BASEDATOS;
+	@SuppressWarnings("unused")
 	private int PUERTO;
 
 	/**
-	 * Constructor ï¿½til tanto para MySql como para SQL Server. No se especifica
-	 * puerto en este caso, puesto que se permite que la conexiï¿½n tome el puerto por
-	 * defecto del motor de base de datos. dentro de sus parï¿½metros de
-	 * inicializaciï¿½n.
+	 * Constructor útil tanto para MySql como para SQL Server. No se especifica
+	 * puerto en este caso, puesto que se permite que la conexión tome el puerto por
+	 * defecto del motor de base de datos. dentro de sus parámetross de
+	 * inicialización.
 	 * 
 	 * @param SERVIDOR {@link java.lang.String}. Con el nombre o IP de la mï¿½quina de destino de la conexiï¿½n.
 	 * @param USUARIO {@link java.lang.String}. Con el nombre de usuario de la base de datos para conectar.
@@ -27,8 +29,8 @@ public class Conexion {
 	}
 
 	/**
-	 * Constructor ï¿½til tanto para MySql como para SQL Server. Dentro de sus
-	 * parï¿½metros de inicializaciï¿½n.
+	 * Constructor útil tanto para MySql como para SQL Server. Dentro de sus
+	 * parámetros de inicialización
 	 * 
 	 * @param SERVIDOR {@link java.lang.String}. Con el nombre o IP de la mï¿½quina de destino de la conexiï¿½n.
 	 * @param USUARIO {@link java.lang.String}. Con el nombre de usuario de la base de datos para conectar.
@@ -41,12 +43,12 @@ public class Conexion {
 		this.USUARIO = USUARIO;
 		this.PASSWORD = PASSWORD;
 		this.BASEDATOS = BASEDATOS;
-		this.PUERTO = PUERTO;
+		this.setPUERTO(PUERTO);
 	}
 
 
 	/**
-	 * Validador general de parï¿½metros comunes en las conexiones.
+	 * Validador general de parámetros comunes en las conexiones.
 	 * 
 	 * @return {@link boolean}. {@code true}, en caso de que todos los datos mï¿½nimos se encuentren presentes. {@code Exception}, en caso de que falte algo.
 	 * @throws ExcepcionServidor
@@ -55,18 +57,22 @@ public class Conexion {
 	 */
 	public boolean validar() throws ExcepcionServidor, ExcepcionUsuario, ExcepcionPassword {
 		if (SERVIDOR.equals("")) {
-			throw new ExcepcionServidor("El nombre del servidor de destino no puede ser vacï¿½o.");
+			throw new ExcepcionServidor("El nombre del servidor de destino no puede ser vacío.");
 		} else if (SERVIDOR == null) {
 			throw new ExcepcionServidor("El nombre del servidor de destino no puede ser nulo.", new NullPointerException());
 		} else if (USUARIO.equals("")) {
-			throw new ExcepcionUsuario("El nombre de usuario no puede ser vacï¿½o.");
+			throw new ExcepcionUsuario("El nombre de usuario no puede ser vacío.");
 		} else if (USUARIO == null) {
 			throw new ExcepcionUsuario("El nombre de usuario no puede ser nulo.", new NullPointerException());
 		} else if (PASSWORD.equals("")) {
-			throw new ExcepcionPassword("La contraseï¿½a no puede ser vacï¿½a.");
+			throw new ExcepcionPassword("La contraseña no puede ser vacía.");
 		} else if (PASSWORD == null) {
 			throw new ExcepcionPassword("La contraseï¿½a no puede ser nula.", new NullPointerException());
 		}
 		return true;
+	}
+
+	public void setPUERTO(int pUERTO) {
+		PUERTO = pUERTO;
 	}
 }
